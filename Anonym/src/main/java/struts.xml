@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+   <constant name="struts.devMode" value="true" />
+   <constant name="struts.custom.i18n.resources" value="global"/>
+   
+   <package name="default" extends="struts-default">
+	<!--  <global-results>
+    		<result name="error">/errore.jsp</result>
+		</global-results>
+	
+		<global-exception-mappings>
+    		<exception-mapping exception="java.lang.Exception" result="error" />
+    	</global-exception-mappings>-->
+   	</package>
+   
+	
+    <include file="it/anonym/home/secure.xml"/>
+ 	<include file="it/anonym/auth/auth.xml"/>
+ 	<include file="it/anonym/secure/auth/secure_auth.xml"/>
+ 	<!--
+ 	 -->
+</struts>

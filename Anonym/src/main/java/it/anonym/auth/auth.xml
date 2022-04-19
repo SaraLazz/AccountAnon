@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package name="auth" namespace="/auth" extends="json-default">
+		<action name="Login" class="it.anonym.auth.EmptyAction">
+			<result>login.jsp</result>
+		</action>
+		
+		<action name="TestAddress" class="it.anonym.auth.Subscribe" method="testAddress">
+			<result name="success">test_address.jsp</result>
+			<result name="error">before_subscribe.jsp</result>
+		</action>
+		
+		<action name="Subscribe" class="it.anonym.auth.Subscribe">
+			<result name="success">subscribe.jsp</result>
+			<result name="error">before_subscribe.jsp</result>
+		</action>
+		
+		<action name="BeforeSubscribe" class="it.anonym.auth.EmptyAction">
+			<result>before_subscribe.jsp</result>
+		</action>
+		
+		<action name="Recover" class="it.anonym.auth.Recover">
+			<result>recover.jsp</result>
+		</action>
+		
+		<action name="GenerateChallenge" class="it.anonym.auth.Recover" method="generateChallenge">
+		<interceptor-ref name="json">
+		<param name="enableSMD">true</param>
+		</interceptor-ref>
+		<result name="success" type="json"></result>
+		</action>
+		
+		
+	    <action name="EndRecover" class="it.anonym.auth.Recover" method="endRecover">
+		<result name="success" type="redirect">
+				/secure/auth/Authenticated.action
+			</result>
+		</action>
+		
+		
+		<action name="FirstLogin" class="it.anonym.auth.AuthAction"
+			method="primaIscrizione">
+			<result name="success" type="redirect">
+				/secure/auth/Authenticated.action
+			</result>
+			<result name="input">subscribe.jsp</result>
+
+
+		</action>
+	 	<action name="Enter" class="it.anonym.auth.AuthAction"
+			method="login">
+			<result name="next" type="redirectAction">../${nextAction}</result>
+			<result name="success" type="redirect">
+				/secure/auth/Authenticated.action
+			</result>
+			<result name="input">login.jsp</result>
+		</action>
+	</package>
+</struts>

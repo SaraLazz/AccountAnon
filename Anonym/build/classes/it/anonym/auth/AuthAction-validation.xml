@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+	<field name="account">
+		<field-validator type="visitor">
+			<message></message>
+		</field-validator>
+	</field>
+	<validator type="expression">
+		<param name="expression">account.username != account.password</param>
+		<message key="field.value.different">
+			<param name="0">getText('field.username')</param>
+			<param name="1">getText('field.password')</param>
+		</message>
+	</validator>
+</validators>

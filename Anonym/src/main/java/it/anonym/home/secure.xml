@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+<package abstract="true" name="secure" namespace="/secure" extends="default">
+		<interceptors>
+			<interceptor name="authenticationInterceptor"
+				class="it.anonym.auth.AuthenticationInterceptor" />
+				<interceptor-stack name="secureStack">
+				<interceptor-ref name="authenticationInterceptor" /> 
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="secureStack" />
+		<global-results>
+			<result name="login" type="redirect">
+				<param name="location">/auth/Login</param>
+				<param name="nextAction">${nextAction}</param>
+			</result>
+		</global-results>
+	</package>
+	</struts>
+	
