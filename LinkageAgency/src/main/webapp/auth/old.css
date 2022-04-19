@@ -1,0 +1,179 @@
+@charset "ISO-8859-1";
+
+html {  
+    height: 100%;
+    font-family: "Rubik", sans-serif;
+    color:#3A3A3A;
+}  
+#form {  
+    text-align: center;  
+    position: relative;  
+    margin-top: 20px  
+}  
+#form fieldset {  
+    background: white;  
+    border: 0 none;  
+    border-radius: 0.5rem;  
+    box-sizing: border-box;  
+    width: 100%;  
+    margin: 0;  
+    padding-bottom: 20px;  
+    position: relative  
+}  
+.finish {  
+    text-align: center  
+}  
+#form fieldset:not(:first-of-type) {  
+    display: none  
+}  
+#form .pre-step {  
+    width: 110px;  
+    font-weight: bold;  
+    color: white;  
+    border: 0 none;  
+    border-radius: 0px;  
+    cursor: pointer;  
+    padding: 10px 5px;  
+    margin: 10px 5px 10px 0px;  
+    border-radius: 8px;
+    float: right  
+}  
+.next-step {  
+    width: 110px;  
+    font-weight: bold;  
+    color: white;  
+    border: 0 none;  
+    border-radius: 0px;  
+    cursor: pointer;  
+    padding: 10px 5px;  
+    margin: 10px 5px 10px 0px; 
+    border-radius: 8px; 
+    float: right  
+}  
+
+
+
+.form, .pre-step {  
+    background: #616161;  
+}  
+.form, .next-step {  
+    background: #2f8d46;   
+}  
+
+#form .pre-step:hover  
+{  
+    background-color: #000000  
+}  
+#form .pre-step:focus {  
+    background-color: #000000  
+}  
+#form .next-step:hover  
+{  
+    background-color: #2F8D46  
+}  
+
+#form .next-step:disabled 
+{  
+    background-color: #dddddd 
+}
+
+#form .next-step:disabled:hover 
+{  
+    background-color: #dddddd  
+}
+
+
+#form .next-step:focus {  
+    background-color: #2F8D46  
+}  
+.text {  
+    color: red;  
+    font-weight: normal  
+}  
+#progressbar {  
+    margin-bottom: 30px;  
+    overflow: hidden;  
+    color: lightgrey  
+}  
+#progressbar .active {  
+    color: #2F8D46  
+}  
+#progressbar li {  
+    list-style-type: none;  
+    font-size: 15px;  
+    width: 25%;  
+    float: left;  
+    position: relative;  
+    font-weight: 400  
+}  
+#progressbar #step1:before {  
+    content: "1"  
+}  
+#progressbar #step2:before {  
+    content: "2"  
+}  
+#progressbar #step3:before {  
+    content: "3"  
+}  
+#progressbar #step4:before {  
+    content: "4"  
+}  
+#progressbar li:before {  
+    width: 50px;  
+    height: 50px;  
+    line-height: 45px;  
+    display: block;  
+    font-size: 20px;  
+    color: #ffffff;  
+    background: lightgray;  
+    border-radius: 50%;  
+    margin: 0 auto 10px auto;  
+    padding: 2px  
+}  
+#progressbar li:after {  
+    content: '';  
+    width: 100%;  
+    height: 2px;  
+    background: lightgray;  
+    position: absolute;  
+    left: 0;  
+    top: 25px;  
+    z-index: -1  
+}  
+#progressbar li.active:before  
+{  
+    background: #2F8D46  
+}  
+#progressbar li.active:after {  
+    background: #2F8D46  
+}  
+#progressbar li.active:after {  
+    background: #2F8D46  
+}  
+h2 {    
+   font-weight: normal;  
+text-align: center;  
+ margin: 10;  
+   padding: 10; 
+}  
+
+h5{
+   font-weight: normal;  
+text-align: center;  	
+}
+
+.progress {  
+    height: 20px  
+}  
+.pbar {  
+    background-color: #2F8D46  
+}  
+
+.fs-title {
+    font-size: 25px;
+    color: #2C3E50;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center
+}
+

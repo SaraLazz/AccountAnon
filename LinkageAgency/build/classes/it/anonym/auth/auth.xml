@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package name="auth" extends="json-default" namespace="/auth">
+	
+	<action name="Authentication" class="it.anonym.auth.EmptyAction">
+	<result name="success">multi_step.jsp</result>
+	</action>
+		
+	<action name="AuthenticationStep1" class="it.anonym.auth.Authentication" method="step1">
+	<interceptor-ref name="json">
+  		<param name="enableSMD">true</param>
+	</interceptor-ref>
+	<result name="success" type="json">
+		<!-- <param name="excludeProperties">eth2_address</param>
+		<param name="excludeProperties">signature</param> -->
+	</result>
+	</action>
+		<action name="AuthenticationStep2" class="it.anonym.auth.Authentication" method="step2">
+		<interceptor-ref name="json">
+  		<param name="enableSMD">true</param>
+	</interceptor-ref>
+	<result name="success" type="json"></result>
+	</action>
+	</package>
+</struts>
